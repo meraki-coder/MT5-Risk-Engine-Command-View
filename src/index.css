@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-bg: #0B0E14;
+  --color-brand-panel: #141921;
+  --color-brand-border: #1E2329;
+  --color-brand-accent: #3b82f6;
+  --color-brand-success: #10b981;
+  --color-brand-danger: #ef4444;
+  --color-brand-warning: #f59e0b;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-brand-bg text-[#E0E0E0] antialiased selection:bg-brand-accent/30;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .panel-geo {
+    @apply bg-brand-panel border border-brand-border rounded-none shadow-none;
+  }
+  
+  .table-header-geo {
+    @apply text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 py-3 px-4 border-b border-brand-border text-left bg-brand-bg;
+  }
+
+  .table-cell-geo {
+    @apply py-3 px-4 border-b border-brand-border text-xs font-mono;
+  }
+
+  .status-tag {
+    @apply px-2 py-0.5 border text-[9px] font-bold uppercase tracking-widest rounded-none;
+  }
+}
+
+/* Scrollbar Utility to match geometric feel */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0E14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E2329;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
